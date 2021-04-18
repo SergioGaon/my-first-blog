@@ -44,20 +44,3 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
-
-#def post_grilla(request):
- #   form = PostForm()
-  #  return render(request, 'blog/post_listado.html', {'form': form})
-
-
-
-# Create your views here.
-
-def show(request):
-    students = Student.objects.all()
-    return render(request,"show.html",{'student':students})
-
-#mostrar datos en html 
-def display(reuest):
-    cl=clientes.objects.all()
-    return render (request,'display.html',{'cl':cl})
