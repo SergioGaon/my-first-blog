@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
+from .models import clientes
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -46,3 +47,8 @@ def post_edit(request, pk):
 #def post_grilla(request):
  #   form = PostForm()
   #  return render(request, 'blog/post_listado.html', {'form': form})
+
+#mostrar datos en html 
+def display(reuest):
+    cl=clientes.objects.all()
+    return render (request,'display.html',{'cl':cl})
