@@ -19,3 +19,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Cliente(models.Model):
+    
+	cl_cod=models.IntegerField()
+	cl_nom=models.CharField(max_length=100)
+	cl_edad=models.IntegerField()
+	cl_dir=models.CharField(max_length=100)
+	cl_tel=models.CharField(max_length=100)
+	cl_email=models.CharField(max_length=100)

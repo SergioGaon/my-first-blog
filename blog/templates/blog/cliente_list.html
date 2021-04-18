@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block contend %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Edad</td>
+			<td>Direccion</td>
+			<td>Telefono</td>
+			<td>Emal</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if clientes %}
+		{% for cliente in clientes %}
+
+		<tr>
+			<td>{{cliente.cod}}</td>
+			<td>{{cliente.nom}}</td>
+			<td>{{cliente.edad}}</td>
+			<td>{{cliente.dir}}</td>
+			<td>{{cliente.tel}}</td>
+			<td>{{cliente.email}}</td>
+
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros de clientes</h1>	
+
+		{% endif %}	
+	</tbody>
+</table>
+{% endblock %}
