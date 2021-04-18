@@ -8,6 +8,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
   #  path('post/grilla', views.post_grilla, name='post_grilla'),
     
+    path('show',views.show),
     #base de datos clientes
-    path('clientes/display'),views.display,name='display'),
+    #path('clientes/display'),views.display,name='display'),
     ]

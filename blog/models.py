@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.db import connections
+
 
 
 class Post(models.Model):
@@ -17,6 +19,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+# Create your models here.
+
+class Student(models.Model):   
+    roll = models.CharField(max_length=100)
+    sclass = models.CharField(max_length=100)
+    fname = models.CharField(max_length=100)
+    lname = models.CharField(max_length=100)
+    class Meta:
+        db_table = "students"
 
 #datos de la base de datos clientes
 class clientes(models.Model):

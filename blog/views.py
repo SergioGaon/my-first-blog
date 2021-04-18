@@ -4,6 +4,7 @@ from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
 from .models import clientes
+from demoapp.models import Student
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -47,6 +48,14 @@ def post_edit(request, pk):
 #def post_grilla(request):
  #   form = PostForm()
   #  return render(request, 'blog/post_listado.html', {'form': form})
+
+
+
+# Create your views here.
+
+def show(request):
+    students = Student.objects.all()
+    return render(request,"show.html",{'student':students})
 
 #mostrar datos en html 
 def display(reuest):
